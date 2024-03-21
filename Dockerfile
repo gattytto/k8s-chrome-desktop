@@ -15,7 +15,7 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 # INSTALL XFCE DESKTOP AND DEPENDENCIES
 RUN apt-get update && apt-get upgrade --assume-yes
 RUN apt-get install --assume-yes --fix-missing sudo wget apt-utils xvfb xfce4 xbase-clients \
-    desktop-base vim xscreensaver google-chrome-stable python-psutil psmisc python3-psutil
+    desktop-base vim xscreensaver google-chrome-stable psmisc python3-psutil
 # INSTALL OTHER SOFTWARE (I.E VSCODE)
 RUN apt-get install --assume-yes --fix-missing code 
 # INSTALL REMOTE DESKTOP
