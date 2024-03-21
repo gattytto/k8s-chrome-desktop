@@ -25,7 +25,7 @@ RUN apt-get install --assume-yes --fix-broken
 RUN bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
 # ---------------------------------------------------------- 
 # SPECIFY VARIABLES FOR SETTING UP CHROME REMOTE DESKTOP
-#ARG USER=myuser
+ARG USER=myuser
 #ARG PIN=271828
 #ARG CODE=4/1AY2e-g4KM-JyQgALDqxIcTTO8ZGcHt-0FJb_wJACFZ_SVJdFNAzU6_qoQv_vEAcENw-sww
 #ARG HOSTNAME=myvirtualdesktop
