@@ -28,7 +28,7 @@ RUN bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-
 ARG USER=myuser
 #ARG PIN=271828
 #ARG CODE=4/1AY2e-g4KM-JyQgALDqxIcTTO8ZGcHt-0FJb_wJACFZ_SVJdFNAzU6_qoQv_vEAcENw-sww
-#ARG HOSTNAME=myvirtualdesktop
+ARG HOSTNAME=myvirtualdesktop
 # ---------------------------------------------------------- 
 # ADD USER TO THE SPECIFIED GROUPS
 RUN adduser --disabled-password --gecos '' $USER
