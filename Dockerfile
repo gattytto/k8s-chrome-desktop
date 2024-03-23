@@ -13,6 +13,7 @@ RUN apt-get update && apt-get upgrade --assume-yes
 # INSTALL XFCE DESKTOP AND DEPENDENCIES
 RUN apt-get install --assume-yes --fix-missing code 
 RUN apt-get install -y \
+    google-chrome-stable \
     xfce4 \
     xfce4-clipman-plugin \
     xfce4-cpugraph-plugin \
