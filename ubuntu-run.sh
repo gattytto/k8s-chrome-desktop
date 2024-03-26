@@ -46,7 +46,7 @@ while [ $# -ne 0 ]; do
 
     addgroup $1
     #echo "username is $1"
-    useradd -m -s /bin/bash -g $1 $1
+    useradd -m -d /storage/$1 -s /bin/bash -g $1 $1
     wait
     #getent passwd | grep foo
     echo $1:$2 | chpasswd 
