@@ -12,7 +12,7 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 RUN apt-get update && apt-get upgrade --assume-yes
 # INSTALL XFCE DESKTOP AND DEPENDENCIES
 RUN apt-get install --assume-yes --fix-missing code 
-RUN apt-get install -y \
+RUN apt update && apt-get install -y \
     g++ zlib1g-dev unzip openssh-client git \
     google-chrome-stable \
     xfce4 \
