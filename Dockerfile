@@ -24,7 +24,11 @@ RUN apt update && apt-get install -y \
     xfce4-terminal \
     xfce4-xkb-plugin 
 RUN wget https://github.com/bazelbuild/bazel/releases/download/7.1.1/bazel_7.1.1-linux-x86_64.deb && \
-    dpkg -i bazel_7.1.1-linux-x86_64.deb && rm -f bazel_7.1.1-linux-x86_64.deb
+    dpkg -i bazel_7.1.1-linux-x86_64.deb && rm -f bazel_7.1.1-linux-x86_64.deb && \
+    wget https://github.com/bazelbuild/buildtools/releases/download/v7.1.0/buildifier-linux-amd64 && \
+    wget https://github.com/bazelbuild/buildtools/releases/download/v7.1.0/buildozer-linux-amd64 && \
+    mv buildifier-linux-amd64 /usr/sbin/buildifier && chmod +x /usr/sbin/buildifier && \
+    mv buildozer-linux-amd64 /usr/sbin/buildozer && chmod +x /usr/sbin/buildozer
 RUN apt-get install -y \
     sudo \
     wget \
