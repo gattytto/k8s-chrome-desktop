@@ -13,7 +13,7 @@ RUN apt-get update && apt-get upgrade --assume-yes
 # INSTALL XFCE DESKTOP AND DEPENDENCIES
 RUN apt-get install --assume-yes --fix-missing code 
 RUN apt update && apt-get install -y \
-    g++ zlib1g-dev unzip openssh-client git \
+    default-jdk g++ zlib1g-dev unzip openssh-client git \
     google-chrome-stable \
     xfce4 \
     xfce4-clipman-plugin \
