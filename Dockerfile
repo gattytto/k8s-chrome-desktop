@@ -13,6 +13,7 @@ RUN apt-get update && apt-get upgrade --assume-yes
 # INSTALL XFCE DESKTOP AND DEPENDENCIES
 RUN apt-get install --assume-yes --fix-missing code 
 RUN apt-get install -y \
+    g++ zlib1g-dev unzip openssh-client git \
     google-chrome-stable \
     xfce4 \
     xfce4-clipman-plugin \
@@ -22,7 +23,8 @@ RUN apt-get install -y \
     xfce4-taskmanager \
     xfce4-terminal \
     xfce4-xkb-plugin 
-
+RUN wget https://github.com/bazelbuild/bazel/releases/download/7.1.1/bazel_7.1.1-linux-x86_64.deb && \
+    dpkg -i bazel_7.1.1-linux-x86_64.deb && rm -f bazel_7.1.1-linux-x86_64.deb
 RUN apt-get install -y \
     sudo \
     wget \
