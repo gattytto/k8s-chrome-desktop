@@ -5,7 +5,7 @@ COPY /ubuntu-run.sh /usr/bin/
 
 RUN mv /usr/bin/ubuntu-run.sh /usr/bin/run.sh && \
     chmod +x /usr/bin/run.sh && \
-    apt-get update && apt-get upgrade --assume-yes && \
+    apt-get update && \
     apt-get --assume-yes install curl gpg wget && \
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && \
     mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg && \
