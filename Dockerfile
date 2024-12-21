@@ -14,7 +14,6 @@ RUN mv /usr/bin/ubuntu-run.sh /usr/bin/run.sh && \
    tee /etc/apt/sources.list.d/vs-code.list
 RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
     apt-get update && apt install --assume-yes --fix-missing code \
-    apt update \
     default-jdk g++ zlib1g-dev unzip openssh-client git \
     google-chrome-stable \
     xfce4 \
