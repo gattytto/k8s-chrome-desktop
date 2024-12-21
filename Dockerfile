@@ -11,8 +11,8 @@ RUN mv /usr/bin/ubuntu-run.sh /usr/bin/run.sh && \
     mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg && \
     wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - &&
     echo "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main" | \
-   tee /etc/apt/sources.list.d/vs-code.list && \
-    sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' &&
+   tee /etc/apt/sources.list.d/vs-code.list
+RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
     apt-get update && apt install --assume-yes --fix-missing code \
     apt update \
     default-jdk g++ zlib1g-dev unzip openssh-client git \
