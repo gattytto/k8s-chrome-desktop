@@ -9,7 +9,7 @@ RUN mv /usr/bin/ubuntu-run.sh /usr/bin/run.sh && \
     apt-get --assume-yes install curl gpg wget && \
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && \
     mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg && \
-    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - &&
+    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     echo "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main" | \
    tee /etc/apt/sources.list.d/vs-code.list
 RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
@@ -36,7 +36,7 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
     wget https://github.com/bazelbuild/buildtools/releases/download/v7.1.0/buildifier-linux-amd64 && \
     wget https://github.com/bazelbuild/buildtools/releases/download/v7.1.0/buildozer-linux-amd64 && \
     mv buildifier-linux-amd64 /usr/sbin/buildifier && chmod +x /usr/sbin/buildifier && \
-    mv buildozer-linux-amd64 /usr/sbin/buildozer && chmod +x /usr/sbin/buildozer &&
+    mv buildozer-linux-amd64 /usr/sbin/buildozer && chmod +x /usr/sbin/buildozer && \
     mkdir /var/run/dbus && \
     cp /etc/X11/xrdp/xorg.conf /etc/X11 && \
     sed -i "s/console/anybody/g" /etc/X11/Xwrapper.config && \
